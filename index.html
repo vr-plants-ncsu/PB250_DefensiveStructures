@@ -95,69 +95,97 @@
     <audio id="tepalVO" src="./assets/Tallis_Lily_01.wav" preload="auto"></a-asset-item>
     <audio id="stamenVO" src="./assets/Tallis_Lily_02.wav" preload="auto"></a-asset-item>
     <audio id="pistilVO" src="./assets/Tallis_Lily_03.wav" preload="auto"></a-asset-item>
-    <audio id="ovaryVO" src="./assets/Tallis_Lily_04.wav" preload="auto"></a-asset-item>
-    
-<!--     Text for the various anatomical callouts are supplied via mixin -->
-    
-     <a-mixin id="tepalSpec" 
-              examinable="headerText: Lily Tepal;
+        <audio id="ovaryVO" src="./assets/Tallis_Lily_04.wav" preload="auto">
+            </a-asset-item>
+
+            <!--     Text for the various anatomical callouts are supplied via mixin -->
+
+            <a-mixin id="tepalSpec"
+                     examinable="headerText: Lily Tepal;
                           contentText: The petal and sepal whorls are not differentiated in appearance so they are called tepals. The tepals collectively make up the perianth.;
                           audioClipUrl: #tepalVO;"></a-mixin>
-    <a-mixin id="stamenSpec" 
-              examinable="headerText: Lily Stamen;
+            <a-mixin id="stamenSpec"
+                     examinable="headerText: Lily Stamen;
                           contentText: Each stamen consists of a stalk called the filament and an anther. Pollen is produced inside the chambers of the anther.;
                           audioClipUrl: #stamenVO;"></a-mixin>
-       
-        <a-mixin id="pistilSpec" 
-              examinable="headerText: Lily Pistil;
+
+            <a-mixin id="pistilSpec"
+                     examinable="headerText: Lily Pistil;
                           contentText: The pistil consists of an ovary, style, and stigma. The ovary produces ovules and nourishes them as they develop into seeds.;
                           audioClipUrl: #pistilVO;"></a-mixin>
-        <a-mixin id="ovarySpec" 
-              examinable="headerText: Lily Ovary;
+            <a-mixin id="ovarySpec"
+                     examinable="headerText: Lily Ovary;
                           contentText: The ovary has three chambers called locules separated by walls called septa. Each locule contains two rows of ovules that will mature into seeds.;
                           audioClipUrl: #ovaryVO;"></a-mixin>
-        
-       
-<!--     Anatomical Models -->
-        <a-asset-item id="petalmodelA1" 
-                      src="./assets/Lily_PetalA_1.gltf" preload="auto"></a-asset-item>
-    <a-asset-item id="petalmodelA2" 
-                      src="./assets/Lily_PetalA_2.gltf" preload="auto"></a-asset-item>
-    <a-asset-item id="petalmodelA3" 
-                      src="./assets/Lily_PetalA_3.gltf" preload="auto"></a-asset-item>
-    <a-asset-item id="petalmodelB1" 
-                      src="./assets/Lily_PetalB_1.gltf" preload="auto"></a-asset-item>
-    <a-asset-item id="petalmodelB2" 
-                      src="./assets/Lily_PetalB_2.gltf" preload="auto"></a-asset-item>
-    <a-asset-item id="petalmodelB3" 
-                      src="./assets/Lily_PetalB_3.gltf" preload="auto"></a-asset-item>
-        <a-asset-item id="stamenmodel1" 
-                      src="./assets/Lily_Stamen_1.gltf" preload="auto"></a-asset-item>
-    <a-asset-item id="stamenmodel2" 
-                      src="./assets/Lily_Stamen_2.gltf" preload="auto"></a-asset-item>
-    <a-asset-item id="stamenmodel3" 
-                      src="./assets/Lily_Stamen_3.gltf" preload="auto"></a-asset-item>
-    <a-asset-item id="stamenmodel4" 
-                      src="./assets/Lily_Stamen_4.gltf" preload="auto"></a-asset-item>
-    <a-asset-item id="stamenmodel5" 
-                      src="./assets/Lily_Stamen_5.gltf" preload="auto"></a-asset-item>
-    <a-asset-item id="stamenmodel6" 
-                      src="./assets/Lily_Stamen_6.gltf" preload="auto"></a-asset-item>
-    <a-asset-item id="stamenmodel1" 
-                      src="./assets/Lily_Stamen_1.gltf" preload="auto"></a-asset-item>
-    <a-asset-item id="pistilmodel" 
-                      src="./assets/Lily_Center_Longitudinal.gltf" preload="auto"></a-asset-item>
 
 
+            <!--     Anatomical Models -->
+            <a-asset-item id="FerrocactusHalf"
+                          src="./assets/Ferrocactus_Half.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="FerrocactusSpineAnimation"
+                          src="./assets/Ferrocactus_SpineAnimation.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="FerrocactusWhole"
+                          src="./assets/Ferrocactus_Whole.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="HoneyLocustFull"
+                          src="./assets/HoneyLocust_Full.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="HoneyLocustLeaf01"
+                          src="./assets/HoneyLocust_Leaf01.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="HoneyLocustLeaf02"
+                          src="./assets/HoneyLocust_Leaf02.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="HoneyLocustLeaf03"
+                          src="./assets/HoneyLocust_Leaf03.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="HoneyLocustLeaf04"
+                          src="./assets/HoneyLocust_Leaf04.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="HoneyLocustLeaf05"
+                          src="./assets/HoneyLocust_Leaf05.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="HoneyLocustLeaf06"
+                          src="./assets/HoneyLocust_Leaf06.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="HoneyLocustThorn01"
+                          src="./assets/HoneyLocust_Thorn01.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="HoneyLocustThorn02"
+                          src="./assets/HoneyLocust_Thorn02.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="HoneyLocustThorn03"
+                          src="./assets/HoneyLocust_Thorn03.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="HoneyLocustThorn04"
+                          src="./assets/HoneyLocust_Thorn04.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="HoneyLocustThorn05"
+                          src="./assets/HoneyLocust_Thorn05.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="HoneyLocustThorn06"
+                          src="./assets/HoneyLocust_Thorn06.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="HoneyLocustThornAnimation"
+                          src="./assets/HoneyLocust_ThornAnimation.gltf" preload="auto"></a-asset-item>
 
-    
-<!-- Sounds used within the interaction system-->
-<a-sound id="click1" src="./assets/click1dry.mp3"></a-sound>
-<a-sound id="click2" src="./assets/click2dry.mp3"></a-sound>
-<a-sound id="click3" src="./assets/click3dry.mp3"></a-sound>
-<a-sound id="clickyes" src="./assets/clickYesdry.mp3"></a-sound>  
-<a-sound id="clickno" src="./assets/clickNodry.mp3"></a-sound>    
-  </a-assets>
+            <a-asset-item id="RoseFull"
+                          src="./assets/Rose_Full.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="RoseLeaf1"
+                          src="./assets/Rose_Leaf01.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="RoseLeaf2"
+                          src="./assets/Rose_Leaf02.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="RoseLeaf3"
+                          src="./assets/Rose_Leaf03.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="RoseLeaf4"
+                          src="./assets/Rose_Leaf04.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="RoseLeaf5"
+                          src="./assets/Rose_Leaf05.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="RosePrickle1"
+                          src="./assets/Rose_Prickle01.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="RosePrickle2"
+                          src="./assets/Rose_Prickle02.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="RosePrickle3"
+                          src="./assets/Rose_Prickle03.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="RoseStem"
+                          src="./assets/Rose_Stem.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="RosePrickleAnimation"
+                          src="./assets/Rose_PrickleAnimation.gltf" preload="auto"></a-asset-item>
+
+
+            <!-- Sounds used within the interaction system-->
+            <a-sound id="click1" src="./assets/click1dry.mp3"></a-sound>
+            <a-sound id="click2" src="./assets/click2dry.mp3"></a-sound>
+            <a-sound id="click3" src="./assets/click3dry.mp3"></a-sound>
+            <a-sound id="clickyes" src="./assets/clickYesdry.mp3"></a-sound>
+            <a-sound id="clickno" src="./assets/clickNodry.mp3"></a-sound>
+</a-assets>
 
 <!-- At the minimum we'd also want to setup an environment light, although we might also need to explore background options -->
 <a-sky id="sky" phi-start="45" src="./assets/backdrop.png" opacity="0"></a-sky>
