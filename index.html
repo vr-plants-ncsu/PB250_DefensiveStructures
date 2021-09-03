@@ -95,7 +95,7 @@
         <a-asset-item id="ferowholeVO" src="./assets/Jabeen_Defensive_01.wav" preload="auto"></a-asset-item>
         <a-asset-item id="ferocrossVO" src="./assets/Jabeen_Defensive_01.wav" preload="auto"></a-asset-item>
         <a-asset-item id="feroareoleVO" src="./assets/Jabeen_Defensive_01.wav" preload="auto"></a-asset-item>
-        <a-asset-item id="locustwholeVO" src="./assets/Jabeen_Defensive_01.wav" preload="auto"></a-asset-item>
+        <a-asset-item id="LocustwholeVO" src="./assets/Jabeen_Defensive_01.wav" preload="auto"></a-asset-item>
         <a-asset-item id="LocustThornVO" src="./assets/Jabeen_Defensive_01.wav" preload="auto"></a-asset-item>
         <a-asset-item id="LocustLeafVO" src="./assets/Jabeen_Defensive_01.wav" preload="auto"></a-asset-item>
         <a-asset-item id="RoseWholeVO" src="./assets/Jabeen_Defensive_01.wav" preload="auto"></a-asset-item>
@@ -120,7 +120,7 @@
         <a-mixin id="LocustWholeSpec"
                  examinable="headerText: Honey Locust;
                           contentText: Modeled here is a young branch of Honey Locust (Gleditsia triacanthos). It has large thorns and compound leaves along the stem.;
-                          audioClipUrl: #locustwholeVO;"></a-mixin>
+                          audioClipUrl: #LocustwholeVO;"></a-mixin>
         <a-mixin id="LocustThornSpec"
                  examinable="headerText: Honey Locust Thorn;
                           contentText: Thorns are stems modified for defense. Honey Locust thorns form from lateral buds and are large and branching.;
@@ -151,6 +151,7 @@
                       src="./assets/Ferrocactus_SpineAnimation.gltf" preload="auto"></a-asset-item>
         <a-asset-item id="FerrocactusWhole"
                       src="./assets/Ferrocactus_Whole.gltf" preload="auto"></a-asset-item>
+
         <a-asset-item id="HoneyLocustFull"
                       src="./assets/HoneyLocust_Full.gltf" preload="auto"></a-asset-item>
         <a-asset-item id="HoneyLocustLeaf01"
@@ -376,156 +377,23 @@
       <a-entity id="Ferrocactus">    
       
        <a-entity id="FerroWhole" 
-                mixin="stamenSpec" 
+                mixin="FerroWholeSpec" 
                  class="dissect" 
                  hoverable clickdrag gridable
                  shadow 
                 scale="0.14 0.14 0.14"
-                       hovercallout="hoverText: Stamen;"
-                 gltf-model="#stamenmodel1"
+                       hovercallout="hoverText: Ferrocactus;"
+                 gltf-model="#FerrocactusWhole"
                  >
                  
           
           </a-entity>
       
-             <a-entity id="lilystamen2" 
-                mixin="stamenSpec" 
-                 class="dissect" 
-                 hoverable clickdrag gridable
-                 shadow 
-                scale="0.14 0.14 0.14"
-                       hovercallout="hoverText: Stamen;"
-                 gltf-model="#stamenmodel2"  
-                 >
-          </a-entity>
-
-      
-             <a-entity id="lilystamen3" 
-                mixin="stamenSpec" 
-                 class="dissect" 
-                 hoverable clickdrag gridable
-                 shadow 
-                scale="0.14 0.14 0.14"
-                       hovercallout="hoverText: Stamen;"
-                 gltf-model="#stamenmodel3"        
-                 >
-          </a-entity>
-
-                   <a-entity id="lilystamen4" 
-                mixin="stamenSpec" 
-                 class="dissect" 
-                 hoverable clickdrag gridable
-                 shadow 
-                scale="0.14 0.14 0.14"
-                       hovercallout="hoverText: Stamen;"
-                 gltf-model="#stamenmodel4"  >
-          </a-entity>
-      
-                   <a-entity id="lilystamen5" 
-                mixin="stamenSpec" 
-                 class="dissect" 
-                 hoverable clickdrag gridable
-                 shadow 
-                scale="0.14 0.14 0.14"
-                       hovercallout="hoverText: Stamen;"
-                 gltf-model="#stamenmodel5"  >
-          </a-entity> 
-        
-        <a-entity id="lilystamen6" 
-                mixin="stamenSpec" 
-                 class="dissect" 
-                 hoverable clickdrag gridable
-                 shadow 
-                scale="0.14 0.14 0.14"
-                       hovercallout="hoverText: Stamen;"
-                 gltf-model="#stamenmodel6"  >
-          </a-entity>
+            
   
 </a-entity>
     
 
-   
-    <a-entity id="petals" 
-                hovercallout="hoverText: Tepal;">
-      
-             <a-entity id="lilypetalA1" 
-                mixin="tepalSpec" 
-                 class="dissect" 
-                hoverable clickdrag gridable
-                 shadow 
-                scale="0.14 0.14 0.14"
-                gltf-model="#petalmodelA1"
-                 >
-          </a-entity>
-      
-             <a-entity id="lilypetalA2" 
-                mixin="tepalSpec" 
-                 class="dissect" 
-                hoverable clickdrag gridable
-                   shadow 
-                scale="0.14 0.14 0.14"
-                gltf-model="#petalmodelA2"
-                 >
-          </a-entity>
-
-      
-             <a-entity id="lilypetalA3" 
-                mixin="tepalSpec" 
-                 class="dissect" 
-                hoverable clickdrag gridable
-                 shadow 
-                scale="0.14 0.14 0.14"
-                gltf-model="#petalmodelA3"
-                 >
-          </a-entity>
-
-                   <a-entity id="lilypetalB1" 
-                mixin="tepalSpec" 
-                 class="dissect" 
-                hoverable clickdrag gridable
-                 shadow                 
-                 scale="0.14 0.14 0.14"
-                gltf-model="#petalmodelB1"
-                 >
-          </a-entity>
-      
-                   <a-entity id="lilypetalB2" 
-                mixin="tepalSpec" 
-                 class="dissect" 
-                hoverable clickdrag gridable
-                shadow                 
-                scale="0.14 0.14 0.14"
-                gltf-model="#petalmodelB2"
-                 >
-          </a-entity> 
-        <a-entity id="lilypetalB3" 
-                mixin="tepalSpec" 
-                 class="dissect" 
-                hoverable clickdrag gridable
-                shadow                 
-                scale="0.14 0.14 0.14"
-                gltf-model="#petalmodelB3"
-                 >
-          </a-entity> </a-entity>
-    
-
-      
-<!--   Pistil a text field for when they're hovered. Pistil is then defined as an entity with raycast collision and events.-->
-    
-       <a-entity id="lilypistil">
-      
-             <a-entity id="lilypistilwhole" 
-                mixin="pistilSpec" 
-                 class="dissect"
-               hovercallout="hoverText: Pistil;"
-                hoverable clickdrag gridable
-                shadow                 
-                scale="0.14 0.14 0.14"
-               gltf-model="#pistilmodel"
-                 >
-          </a-entity>
-      </a-entity>
-   
                 </a-entity>
 
   
