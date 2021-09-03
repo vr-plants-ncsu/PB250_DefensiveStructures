@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <title>Plant Defensive Structures • A-Frame</title>
-  <meta name="description" content="Lily Dissection • A-Frame">
+  <meta name="description" content="Plant Defensive Structures Dissection • A-Frame">
   
 <!--   This is a series of components and plugins used -->
 <!-- AFrame webXR Library  ver 1.2.0 -->
@@ -61,9 +61,7 @@
         <!--     This html document feeds the 'info' popup in the corner, it can have images and links embedded -->
         <a-asset-item id="messageText" src="message.html"></a-asset-item>
 
-        <!--   These are the models for the splash screen marquee -->
-        <a-asset-item id="splash" src="./assets/LilySplashModel_exterior.gltf" preload="auto"></a-asset-item>
-        <a-asset-item id="splashinsert" src="./assets/LilySplashModel_interior.gltf" preload="auto"></a-asset-item>
+
 
         <!-- White table seen beneath interactions      -->
         <a-asset-item id="table" src="./assets/TableOpenSlate.glb" preload="auto"></a-asset-item>
@@ -72,9 +70,7 @@
         <a-asset-item id="containerBox" src="./assets/GlowGlobe2.glb" preload="auto"></a-asset-item>
 
         <!--   Various Plant Anatomy models, many with their origin set to 0,0,0 such that they assemble into a more substantial model when overlayed -->
-        <a-asset-item id="lilyhemisphere"
-                      src="./assets/Lily_Full_Half.gltf"
-                      response-type="arraybuffer" crossorigin="anonymous" preload="auto"></a-asset-item>
+
 
         <!-- Template image for text field beneath observation container -->
         <a-image id="calloutBg" src="./assets/Callout_BG.png" preload="auto"></a-image>
@@ -358,13 +354,13 @@
   
   
 <!-- Lilywholedisection is a container element for all the draggable anatomy models in the dissection simulation    -->
-<a-entity id="wholespecimencontrol" 
+<a-entity id="wholespecimencontrol1" 
           position="-0.15 1.116 -1.69" 
           rotation="-90 -457.8389044739884 -28.888742489645793" 
           geometry="primitive: ring; radiusInner: 0.1; radiusOuter: 0.2" 
           mixin="" 
           class="dissect" 
-          rotatable="targetId: lilywholedissection; rotateZ: false">
+          rotatable="targetId: defensivewholedissections; rotateZ: false">
   </a-entity>
   
   <a-text id="callouttext" text="color: #000000; value: " position="-0.731 3.2 -3.818" scale="" rotation="23.218105811951983 14.442172100685982 0"></a-text>
