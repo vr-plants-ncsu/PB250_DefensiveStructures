@@ -362,13 +362,35 @@
                           hoverable clickdrag gridable
                           shadow
                           scale="0.14 0.14 0.14"
-                          hovercallout="hoverText: Ferrocactus;"
+                          hovercallout="hoverText: Ferocactus;"
                           gltf-model="#FerrocactusWhole">
 
 
                 </a-entity>
 
+                <a-entity id="FeroAreole"
+                          mixin="FerroWholeSpec"
+                          class="dissect"
+                          hoverable clickdrag gridable
+                          shadow
+                          scale="0.14 0.14 0.14"
+                          hovercallout="hoverText: Ferocactus;"
+                          gltf-model="#FerrocactusWhole">
 
+
+                </a-entity>
+
+                <a-entity id="FerroWhole"
+                          mixin="FerroWholeSpec"
+                          class="dissect"
+                          hoverable clickdrag gridable
+                          shadow
+                          scale="0.14 0.14 0.14"
+                          hovercallout="hoverText: Ferocactus;"
+                          gltf-model="#FerrocactusWhole">
+
+
+                </a-entity>
 
             </a-entity>
 
@@ -485,7 +507,7 @@
             </a-box>
         </a-entity>
 
-        <!--
+
     <a-entity id="ExaminationToggleUI" layout="margin: 3; angle: NaN; columns: 2" scale="0.05 0.05 0.05" position="0.922 1.273 -0.864" rotation="0 130.5 0">
       <a-cylinder id="ContextButton" class="dissect" position="" scale="-0.5 0.5 -0.5" material="color: #55D142; opacity: 0.65"
                   contextbutton="onGltfUrl: https://cdn.glitch.com/9e3ddbc0-bfb3-4240-8716-a793e4bd6483%2Fbuttons_spec_on.glb?v=1624903611959;
@@ -505,7 +527,7 @@
                     animation.to: 0;">
         <a-entity id="toggle1light" light="type:  point;  color:  #FFFFFF  decay:  1.5;  distance:  0.075;  intensity:  0"></a-entity>
         </a-cylinder>
-       </a-entity> -->
+       </a-entity>
 
         <a-box id="gridbutton" scale="0.023 0.023 0.023" class="dissect" position="0.088 1.228 -1.433" material="color: #56b4e9; opacity: 0.65" scalebutton="scaleDelta: 0; scaleMax: 0.6" gltf-model="#buttonGrid"
                sound="src: #click2; on: click"></a-box>
