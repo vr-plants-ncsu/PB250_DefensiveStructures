@@ -173,6 +173,8 @@
                           src="./assets/HoneyLocust_Thorn05.gltf" preload="auto"></a-asset-item>
             <a-asset-item id="HoneyLocustThorn06"
                           src="./assets/HoneyLocust_Thorn06.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="HoneyLocustStem"
+                          src="./assets/HoneyLocust_Stem.gltf" preload="auto"></a-asset-item>
             <a-asset-item id="HoneyLocustThornAnimation"
                           src="./assets/HoneyLocust_ThornAnimation.gltf" preload="auto"></a-asset-item>
 
@@ -358,7 +360,7 @@
         </a-entity>
         <a-entity id="wholespecimencontrol3"
                   scale="0.75 0.75 0.75"
-                  position="-0.15 1.116 -1.69"
+                  position="0.415 1.116 -1.69"
                   rotation="-90 -457.8389044739884 -28.888742489645793"
                   geometry="primitive: ring; radiusInner: 0.1; radiusOuter: 0.2"
                   mixin=""
@@ -531,6 +533,15 @@
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Thorn;"
                           gltf-model="#HoneyLocustThorn06">
+                </a-entity>
+                <a-entity id="LocustStem1"
+                          mixin="LocustThornSpec"
+                          class="dissect"
+                          hoverable clickdrag gridable
+                          shadow
+                          scale="0.14 0.14 0.14"
+                          hovercallout="hoverText: Stem;"
+                          gltf-model="#HoneyLocustStem">
                 </a-entity>
 
             </a-entity>
