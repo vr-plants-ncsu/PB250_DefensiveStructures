@@ -82,8 +82,8 @@
             <a-asset-item id="buttonSpecOn" src="./assets/buttons_spec_on.glb" preload="auto"></a-asset-item>
             <a-asset-item id="buttonExpand" src="./assets/buttons_expand.glb" preload="auto"></a-asset-item>
             <a-asset-item id="buttonGrid" src="./assets/buttons_grid.glb" preload="auto"></a-asset-item>
-            <a-asset-item id="splashinsert" src="./assets/LilySplashModel_interior.gltf" preload="auto"></a-asset-item>
-            <a-asset-item id="splash" src="./assets/LilySplashModel_exterior.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="splashinsert" src="./assets/DSSplashModel_interior.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="splash" src="./assets/DSSplashModel_exterior.gltf" preload="auto"></a-asset-item>
 
             <a-sound id="ferowholeVO" src="./assets/Jabeen_Defensive_01.wav" preload="auto"></a-sound>
             <a-sound id="ferocrossVO" src="./assets/Jabeen_Defensive_01.wav" preload="auto"></a-sound>
@@ -107,13 +107,10 @@
             <a-mixin id="LocustWholeSpec"
                      examinable="headerText: Honey Locust;
                           contentText: Modeled here is a young branch of Honey Locust (Gleditsia triacanthos). It has large thorns and compound leaves along the stem.;
-                          audioClipUrl: #LocustwholeVO;"
-                          sound="src: #LocustwholeVO"></a-mixin>
+                          audioClipUrl: #LocustwholeVO;"></a-mixin>
             <a-mixin id="LocustThornSpec"
-            sound="src: #LocustThornVO"
                      ></a-mixin>
             <a-mixin id="LocustLeafSpec"
-            sound="src: #LocustLeafVO"
                      ></a-mixin>
 
             <a-mixin id="RoseWholeSpec"
@@ -574,7 +571,7 @@
                                  hideOriginal: true">
                 </a-entity>
                 <a-entity id="LocustStem1"
-                          mixin="LocustThornSpec"
+                          mixin="LocustWholeSpec"
                           class="dissect"
                           hoverable clickdrag="centerOffset: 0, -1, 0"
                           gridable
