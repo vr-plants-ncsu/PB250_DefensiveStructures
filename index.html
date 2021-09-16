@@ -7,15 +7,13 @@
     <!--   This is a series of components and plugins used -->
     <!-- AFrame webXR Library  ver 1.2.0 -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <!-- Superhands allows drag and rotation function -->
-    <script src="./superhands.js"></script>
     <!--Environment Component  -->
     <script src="./environment-component.js"></script>
     <!--Buttons and other event system uses event-set component and proxy events -->
     <script src="./eventset.js"></script>
     <script src="./proxy-event.js"></script>
     <!--   Physics isn't used in a major way but is loaded in to support development -->
-    <script src="./aframeextras.js'"></script>
+    <script src="./aframeextras.js"></script>
     <!-- GSAP (GreenSock Animation Platform) for animation addons like tweening -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
     <script type="module">
@@ -102,40 +100,33 @@
             <a-mixin id="FerroWholeSpec"
                      examinable="headerText: Ferocactus;
                           contentText: Modeled here is a Barrel Cactus of genus Ferocactus. Cactus plants have areoles that produce clusters of spines along the stem.;
-                          audioClipUrl: #ferowholeVO;"></a-mixin>
-            <a-mixin id="FerroCrossSpec"
-                     examinable="headerText: Ferocactus;
-                          contentText: Most of the cactus stem consists of soft tissues for water storage. A ring of vascular tissues moves water and nutrients along the stem.;
-                          audioClipUrl: #ferocrossVO;"></a-mixin>
-            <a-mixin id="FerroAreoleSpec"
-                     examinable="headerText: Ferocactus Areole;
-                          contentText: Areoles are modified lateral buds that produce clusters of spines. Each spine is a leaf modified into a defensive structure.;
-                          audioClipUrl: #feroareoleVO;"></a-mixin>
+                          audioClipUrl: #ferowholeVO;"
+                          >
+                        </a-mixin>
 
             <a-mixin id="LocustWholeSpec"
                      examinable="headerText: Honey Locust;
                           contentText: Modeled here is a young branch of Honey Locust (Gleditsia triacanthos). It has large thorns and compound leaves along the stem.;
-                          audioClipUrl: #LocustwholeVO;"></a-mixin>
+                          audioClipUrl: #LocustwholeVO;"
+                          sound="src: #LocustwholeVO"></a-mixin>
             <a-mixin id="LocustThornSpec"
-                     examinable="headerText: Honey Locust Thorn;
-                          contentText: Thorns are stems modified for defense. Honey Locust thorns form from lateral buds and are large and branching.;
-                          audioClipUrl: #LocustThornVO;"></a-mixin>
+            sound="src: #LocustThornVO"
+                     ></a-mixin>
             <a-mixin id="LocustLeafSpec"
-                     examinable="headerText: Honey Locust Leaf;
-                          contentText: Bipinnately compound leaves have rows of leaflets joined via rachillae to a central rachis. A petiole connects the leaf to the stem.;
-                          audioClipUrl: #LocustLeafVO;"></a-mixin>
+            sound="src: #LocustLeafVO"
+                     ></a-mixin>
 
             <a-mixin id="RoseWholeSpec"
                      examinable="headerText: Rose;
-                          contentText: Modeled here is a young branch of Honey Locust (Gleditsia triacanthos). It has large thorns and compound leaves along the stem.;
+                          contentText: Modeled here is a stem of a Rose of the genus Rosa. It has prickles and compound leaves along the stem.;
                           audioClipUrl: #RoseWholeVO;"></a-mixin>
             <a-mixin id="RosePrickleSpec"
-                     examinable="headerText: Rose Prickle;
-                          contentText: Thorns are stems modified for defense. Honey Locust thorns form from lateral buds and are large and branching.;
+                     examinable="headerText: Rose Stem with Prickles;
+                          contentText: Prickles are outgrowths of the epidermis and normally occur along the stem of the Rose plant.;
                           audioClipUrl: #RosePrickleVO;"></a-mixin>
             <a-mixin id="RoseLeafSpec"
                      examinable="headerText: Rose Leaf;
-                          contentText: Bipinnately compound leaves have rows of leaflets joined via rachillae to a central rachis. A petiole connects the leaf to the stem.;
+                          contentText: Rose leaves are pinnately compound. A periole connects the leaf to the stem of the Rose plant.;
                           audioClipUrl: #RoseLeafVO;"></a-mixin>
 
 
@@ -370,7 +361,7 @@
 
         <a-text id="callouttext" text="color: #000000; value: " position="-0.731 3.2 -3.818" scale="" rotation="23.218105811951983 14.442172100685982 0"></a-text>
 
-        <a-entity id="defensivewholedissectionsfero" position="-0.15 1.316 -1.69" rotation="0 0 0" scale="0.75 0.75 0.75">
+        <a-entity id="defensivewholedissectionsfero" position="-0.15 1.21 -1.69" rotation="0 0 0" scale="0.75 0.75 0.75">
 
 
             <a-entity id="Ferrocactus">
@@ -383,32 +374,8 @@
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Ferocactus;"
                           gltf-model="#FerrocactusWhole"
-                          contextbutton="onGltfUrl: #FerrocactusSpineAnimation;
-                                 offGltfUrl: #FerrocactusWhole">
-
-
-                </a-entity>
-
-                <a-entity id="FeroAreole"
-                          mixin="FerroWholeSpec"
-                          class="dissect"
-                          hoverable clickdrag gridable
-                          shadow
-                          scale="0.14 0.14 0.14"
-                          hovercallout="hoverText: Ferocactus Areole;"
-                          gltf-model="#FerrocactusWhole">
-
-
-                </a-entity>
-
-                <a-entity id="FerroWhole"
-                          mixin="FerroWholeSpec"
-                          class="dissect"
-                          hoverable clickdrag gridable
-                          shadow
-                          scale="0.14 0.14 0.14"
-                          hovercallout="hoverText: Ferocactus;"
-                          gltf-model="#FerrocactusWhole">
+                          contextvisible="gltfName: #FerrocactusSpineAnimation;
+                                 hideOriginal: true">
 
 
                 </a-entity>
@@ -420,7 +387,7 @@
 
         </a-entity>
 
-        <a-entity id="defensivewholedissectionslocust" position="-0.415 1.116 -1.42" rotation="0 0 0" scale="0.375 0.375 0.375">
+        <a-entity id="defensivewholedissectionslocust" position="-0.415 1.236 -1.42" rotation="0 0 0" scale="0.375 0.375 0.375">
 
 
             <a-entity id="Locust">
@@ -428,8 +395,13 @@
                 <a-entity id="LocustLeaf1"
                           mixin="LocustLeafSpec"
                           class="dissect"
-                          hoverable clickdrag gridable
+                          hoverable clickdrag="centerOffset: 0, 0.125, 0"
+                           gridable
                           shadow
+                          examinable="headerText: Honey Locust Leaf;
+                          contentText: Bipinnately compound leaves have rows of leaflets joined via rachillae to a central rachis. A petiole connects the leaf to the stem.;
+                          audioClipUrl: #LocustLeafVO;
+                          centerOffset: 0, 0.125, 0;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Leaf;"
                           gltf-model="#HoneyLocustLeaf01">
@@ -437,8 +409,13 @@
                 <a-entity id="LocustLeaf2"
                           mixin="LocustLeafSpec"
                           class="dissect"
-                          hoverable clickdrag gridable
+                          hoverable clickdrag="centerOffset: 0, -0.125, 0"
+                          gridable
                           shadow
+                          examinable="headerText: Honey Locust Leaf;
+                          contentText: Bipinnately compound leaves have rows of leaflets joined via rachillae to a central rachis. A petiole connects the leaf to the stem.;
+                          audioClipUrl: #LocustLeafVO;
+                          centerOffset: 0, -0.125, 0;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Leaf;"
                           gltf-model="#HoneyLocustLeaf02">
@@ -446,8 +423,13 @@
                 <a-entity id="LocustLeaf3"
                           mixin="LocustLeafSpec"
                           class="dissect"
-                          hoverable clickdrag gridable
+                          hoverable clickdrag="centerOffset: 0, -0.375,5, 0"
+                          gridable
                           shadow
+                          examinable="headerText: Honey Locust Leaf;
+                          contentText: Bipinnately compound leaves have rows of leaflets joined via rachillae to a central rachis. A petiole connects the leaf to the stem.;
+                          audioClipUrl: #LocustLeafVO;
+                          centerOffset: 0, -0.375, 0;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Leaf;"
                           gltf-model="#HoneyLocustLeaf03">
@@ -455,8 +437,13 @@
                 <a-entity id="LocustLeaf4"
                           mixin="LocustLeafSpec"
                           class="dissect"
-                          hoverable clickdrag gridable
+                          hoverable clickdrag="centerOffset: 0, -0.625, 0"
+                          gridable
                           shadow
+                          examinable="headerText: Honey Locust Leaf;
+                          contentText: Bipinnately compound leaves have rows of leaflets joined via rachillae to a central rachis. A petiole connects the leaf to the stem.;
+                          audioClipUrl: #LocustLeafVO;
+                          centerOffset: 0, -0.625, 0;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Leaf;"
                           gltf-model="#HoneyLocustLeaf04">
@@ -464,8 +451,13 @@
                 <a-entity id="LocustLeaf5"
                           mixin="LocustLeafSpec"
                           class="dissect"
-                          hoverable clickdrag gridable
+                          hoverable clickdrag="centerOffset: 0, -0.875, 0"
+                          gridable
                           shadow
+                          examinable="headerText: Honey Locust Leaf;
+                          contentText: Bipinnately compound leaves have rows of leaflets joined via rachillae to a central rachis. A petiole connects the leaf to the stem.;
+                          audioClipUrl: #LocustLeafVO;
+                          centerOffset: 0, -0.875, 0;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Leaf;"
                           gltf-model="#HoneyLocustLeaf05">
@@ -473,8 +465,13 @@
                 <a-entity id="LocustLeaf6"
                           mixin="LocustLeafSpec"
                           class="dissect"
-                          hoverable clickdrag gridable
+                          hoverable clickdrag="centerOffset: 0, -1.125, 0"
+                          gridable
                           shadow
+                          examinable="headerText: Honey Locust Leaf;
+                          contentText: Bipinnately compound leaves have rows of leaflets joined via rachillae to a central rachis. A petiole connects the leaf to the stem.;
+                          audioClipUrl: #LocustLeafVO;
+                          centerOffset: 0, -1.125, 0;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Leaf;"
                           gltf-model="#HoneyLocustLeaf06">
@@ -483,61 +480,104 @@
                 <a-entity id="LocustThorn1"
                           mixin="LocustThornSpec"
                           class="dissect"
-                          hoverable clickdrag gridable
+                          hoverable clickdrag="centerOffset: 0, 0.06, 0"
+                          gridable
                           shadow
+                          examinable="headerText: Honey Locust Thorn;
+                          contentText: Thorns are stems modified for defense. Honey Locust thorns form from lateral buds and are large and branching.;
+                          audioClipUrl: #LocustThornVO;
+                          centerOffset: 0, 0.06, 0;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Thorn;"
-                          gltf-model="#HoneyLocustThorn01">
+                          gltf-model="#HoneyLocustThorn01"
+                          contextvisible="gltfName: #HoneyLocustThornAnimation;
+                                 hideOriginal: true">
                 </a-entity>
                 <a-entity id="LocustThorn2"
                           mixin="LocustThornSpec"
                           class="dissect"
-                          hoverable clickdrag gridable
+                          hoverable clickdrag="centerOffset: 0, -0.06, 0"
+                          gridable
                           shadow
+                          examinable="headerText: Honey Locust Thorn;
+                          contentText: Thorns are stems modified for defense. Honey Locust thorns form from lateral buds and are large and branching.;
+                          audioClipUrl: #LocustThornVO;
+                          centerOffset: 0, -0.06, 0;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Thorn;"
-                          gltf-model="#HoneyLocustThorn02">
+                          gltf-model="#HoneyLocustThorn02"
+                          contextvisible="gltfName: #HoneyLocustThornAnimation;
+                                 hideOriginal: true">
                 </a-entity>
                 <a-entity id="LocustThorn3"
                           mixin="LocustThornSpec"
                           class="dissect"
-                          hoverable clickdrag gridable
+                          hoverable clickdrag="centerOffset: 0, -0.18, 0"
+                          gridable
                           shadow
+                          examinable="headerText: Honey Locust Thorn;
+                          contentText: Thorns are stems modified for defense. Honey Locust thorns form from lateral buds and are large and branching.;
+                          audioClipUrl: #LocustThornVO;
+                          centerOffset: 0, -0.18, 0;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Thorn;"
-                          gltf-model="#HoneyLocustThorn03">
+                          gltf-model="#HoneyLocustThorn03"
+                          contextvisible="gltfName: #HoneyLocustThornAnimation;
+                                 hideOriginal: true">
                 </a-entity>
                 <a-entity id="LocustThorn4"
                           mixin="LocustThornSpec"
                           class="dissect"
-                          hoverable clickdrag gridable
+                          hoverable clickdrag="centerOffset: 0, -0.30, 0"
+                          gridable
                           shadow
+                          examinable="headerText: Honey Locust Thorn;
+                          contentText: Thorns are stems modified for defense. Honey Locust thorns form from lateral buds and are large and branching.;
+                          audioClipUrl: #LocustThornVO;
+                          centerOffset: 0, -0.30, 0;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Thorn;"
-                          gltf-model="#HoneyLocustThorn04">
+                          gltf-model="#HoneyLocustThorn04"
+                          contextvisible="gltfName: #HoneyLocustThornAnimation;
+                                 hideOriginal: true">
                 </a-entity>
                 <a-entity id="LocustThorn5"
                           mixin="LocustThornSpec"
                           class="dissect"
-                          hoverable clickdrag gridable
+                          hoverable clickdrag="centerOffset: 0, -0.42, 0"
+                          gridable
                           shadow
+                          examinable="headerText: Honey Locust Thorn;
+                          contentText: Thorns are stems modified for defense. Honey Locust thorns form from lateral buds and are large and branching.;
+                          audioClipUrl: #LocustThornVO;
+                          centerOffset: 0, -0.42, 0;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Thorn;"
-                          gltf-model="#HoneyLocustThorn05">
+                          gltf-model="#HoneyLocustThorn05"
+                          contextvisible="gltfName: #HoneyLocustThornAnimation;
+                                 hideOriginal: true">
                 </a-entity>
                 <a-entity id="LocustThorn6"
                           mixin="LocustThornSpec"
                           class="dissect"
-                          hoverable clickdrag gridable
+                          hoverable clickdrag="centerOffset: 0, -0.56, 0"
+                           gridable
                           shadow
+                          examinable="headerText: Honey Locust Thorn;
+                          contentText: Thorns are stems modified for defense. Honey Locust thorns form from lateral buds and are large and branching.;
+                          audioClipUrl: #LocustThornVO;
+                          centerOffset: 0, -0.56, 0;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Thorn;"
-                          gltf-model="#HoneyLocustThorn06">
+                          gltf-model="#HoneyLocustThorn06"
+                          contextvisible="gltfName: #HoneyLocustThornAnimation;
+                                 hideOriginal: true">
                 </a-entity>
                 <a-entity id="LocustStem1"
                           mixin="LocustThornSpec"
                           class="dissect"
-                          hoverable clickdrag gridable
+                          hoverable clickdrag="centerOffset: 0, -1, 0"
+                          gridable
                           shadow
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Stem;"
@@ -547,7 +587,7 @@
             </a-entity>
         </a-entity>
 
-            <a-entity id="defensivewholedissectionsrose" position="0.415 1.516 -1.42" rotation="0 0 0" scale="0.375 0.375 0.375">
+            <a-entity id="defensivewholedissectionsrose" position="0.415 1.260 -1.42" rotation="0 0 0" scale="0.375 0.375 0.375">
 
 
                 <a-entity id="Rose">
@@ -555,7 +595,8 @@
                     <a-entity id="RoseLeafA"
                               mixin="RoseLeafSpec"
                               class="dissect"
-                              hoverable clickdrag gridable
+                              hoverable clickdrag="centerOffset: 0, 0.06, 0"
+                              gridable
                               shadow
                               scale="0.14 0.14 0.14"
                               hovercallout="hoverText: Leaf;"
@@ -564,7 +605,8 @@
                     <a-entity id="RoseLeafB"
                               mixin="RoseLeafSpec"
                               class="dissect"
-                              hoverable clickdrag gridable
+                              hoverable clickdrag="centerOffset: 0, -0.3, 0"
+                               gridable
                               shadow
                               scale="0.14 0.14 0.14"
                               hovercallout="hoverText: Leaf;"
@@ -573,7 +615,7 @@
                     <a-entity id="RoseLeafC"
                               mixin="RoseLeafSpec"
                               class="dissect"
-                              hoverable clickdrag gridable
+                              hoverable clickdrag="centerOffset: 0, -0.66, 0" gridable
                               shadow
                               scale="0.14 0.14 0.14"
                               hovercallout="hoverText: Leaf;"
@@ -582,7 +624,7 @@
                     <a-entity id="RoseLeafD"
                               mixin="RoseLeafSpec"
                               class="dissect"
-                              hoverable clickdrag gridable
+                              hoverable clickdrag="centerOffset: 0.02, -1, 0" gridable
                               shadow
                               scale="0.14 0.14 0.14"
                               hovercallout="hoverText: Leaf;"
@@ -591,47 +633,22 @@
                     <a-entity id="RoseLeafE"
                               mixin="RoseLeafSpec"
                               class="dissect"
-                              hoverable clickdrag gridable
+                              hoverable clickdrag="centerOffset: 0, -1.3, 0" gridable
                               shadow
                               scale="0.14 0.14 0.14"
                               hovercallout="hoverText: Leaf;"
                               gltf-model="#RoseLeaf5">
                     </a-entity>
-                    <a-entity id="RosePrickleA"
-                              mixin="RosePrickleSpec"
-                              class="dissect"
-                              hoverable clickdrag gridable
-                              shadow
-                              scale="0.14 0.14 0.14"
-                              hovercallout="hoverText: Prickle;"
-                              gltf-model="#RosePrickle1">
-                    </a-entity>
-                    <a-entity id="RosePrickleB"
-                              mixin="RosePrickleSpec"
-                              class="dissect"
-                              hoverable clickdrag gridable
-                              shadow
-                              scale="0.14 0.14 0.14"
-                              hovercallout="hoverText: Prickle;"
-                              gltf-model="#RosePrickle2">
-                    </a-entity>
-                    <a-entity id="RosePrickleC"
-                              mixin="RosePrickleSpec"
-                              class="dissect"
-                              hoverable clickdrag gridable
-                              shadow
-                              scale="0.14 0.14 0.14"
-                              hovercallout="hoverText: Prickle;"
-                              gltf-model="#RosePrickle3">
-                    </a-entity>
                     <a-entity id="RoseStemA"
-                              mixin="RoseWholeSpec"
+                              mixin="RosePrickleSpec"
                               class="dissect"
-                              hoverable clickdrag gridable
+                              hoverable clickdrag="centerOffset: 0, -0.66, 0" gridable
                               shadow
                               scale="0.14 0.14 0.14"
                               hovercallout="hoverText: Stem;"
-                              gltf-model="#RoseStem">
+                              gltf-model="#RoseStem"
+                              contextvisible="gltfName: #RosePrickleAnimation;
+                                 hideOriginal: true">
                     </a-entity>
 
 

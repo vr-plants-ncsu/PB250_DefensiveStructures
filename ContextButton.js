@@ -15,7 +15,7 @@ AFRAME.registerComponent('contextbutton',{
        return;
      }
      this.components.contextbutton.resetCounter();
-     entity.emit('context_activate',null,false);
+     entity.emit('context_activate',{state: comp.data.state},false);
      if(comp.data.state == false){
        //set the model to the alt
        entity.setAttribute('gltf-model',comp.data.onGltfUrl);
@@ -40,7 +40,7 @@ AFRAME.registerComponent('contextbutton',{
        return;
      }
      entity.components.contextbutton.resetCounter();
-     entity.emit('context_activate',null,false);
+     entity.emit('context_activate',{state: comp.data.state},false);
       
    if(comp.data.state == false){
        //set the model to the alt
@@ -55,6 +55,12 @@ AFRAME.registerComponent('contextbutton',{
        return;
      }
      });
+
+     let examBoxComp = document.querySelector('[ExamBox]');
+     examBoxComp.addEventListener('disassociated', function(event){
+      entity.setAttribute('gltf-model',comp.data.offGltfUrl);
+       comp.data.state = false;
+   });
  },
   tick: function(time, timeDelta){
     if(clickCooldownCounter > 0){

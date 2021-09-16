@@ -1,5 +1,6 @@
 AFRAME.registerComponent("clickdrag", {
   schema: {
+    centerOffset: {type: "vec3", default:{x:0, y:0, z:0}},
     isMoving: { type: "bool", default: false }
   },
   init: function() {
@@ -49,6 +50,10 @@ AFRAME.registerComponent("clickdrag", {
         //target the local position after unprojecting
         screenPos.unproject(camera.getObject3D("camera"));
         screenPos = comp.el.object3D.parent.worldToLocal(screenPos);
+        //add the offset
+        screenPos.x += comp.data.centerOffset.x;
+        screenPos.y += comp.data.centerOffset.y;
+        screenPos.z += comp.data.centerOffset.z;
 
         TweenMax.to(comp.el.object3D, 0.1, {
           three: {

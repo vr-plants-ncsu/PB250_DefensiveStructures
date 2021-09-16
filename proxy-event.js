@@ -62,7 +62,3 @@ AFRAME.registerComponent('proxy-event', {
 	    });
 	  }
 	});
-
-
-/***/ })
-/******/ ]);

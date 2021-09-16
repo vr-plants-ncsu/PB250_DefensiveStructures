@@ -19,7 +19,7 @@ AFRAME.registerComponent('exambox',{
     //make that object our stored object and require it be removed before 
     //adding any other new objects
 },
-  associate: function(entity){
+  associate: function(entity, centerOffset){
         //if we already have a stored entity, dissassocite first
     if(storedObject !== null){
       this.disassociate();
@@ -39,6 +39,8 @@ AFRAME.registerComponent('exambox',{
     childEn.setAttribute('gltf-model',gltfstring);
     childEn.setAttribute('scale',entity.object3D.scale);
     childEn.setAttribute('id',"examModelChild");
+    //TODO add an offset from examinable to the local position of the childObject
+    childEn.setAttribute('position',{x:centerOffset.x, y:centerOffset.y, z:centerOffset.z})
     newEntity.setAttribute('id', "examModel")
     newEntity.setAttribute('class',"dissect");
     newEntity.setAttribute('rotatable',"");
@@ -71,13 +73,13 @@ AFRAME.registerComponent('exambox',{
     //TweenMax.to(storedObject.object3D, 0.3, {three:{rotationX:storedRotation.x, rotationY:storedRotation.y, rotationZ:storedRotation.z}, ease:Sine.easeOut});
     //TweenMax.to(storedObject.object3D, 0.3, {three:{positionX: storedPosition.x, positionY: storedPosition.y,positionZ: storedPosition.z}, ease:Sine.easeOut});
     TweenMax.to(storedObject.object3D, 0.3, {three:{scaleX:0, scaleY:0, scaleZ:0}, ease:Sine.easeOut});
-    //todo add this as a scale callout
-    storedObject.parentNode.removeChild(storedObject);
-    
     //TweenMax.to(storedObject.object3D, 0.3, {three:{opacity: 1.0}, ease:Sine.easeIn});
     //storedObject.object3D.rotation.set(0, 0, 0);
     this.el.emit('disassociated',{disassociatedEntity: storedObject},false);
+    //todo add this as a scale callout
+    storedObject.parentNode.removeChild(storedObject);
     storedObject = null;
+
     canAssociate = true;
   },
   centerLocalChild: function(parent, child){

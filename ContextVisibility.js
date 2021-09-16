@@ -1,37 +1,62 @@
-var crossSection;
-var crossSectionIsVisible = false;
-var crossSectionIsActive = false;
-
 AFRAME.registerComponent('contextvisible',{
   schema: {
     gltfName:{type: 'string', default: ""},
-    isActive:{type: 'bool', default: false},
-    isVisible:{type: 'bool', default: false}
+    hideOriginal:{type: 'bool', default: false},
+    crossSectionIsVisible:{type: 'bool', default: false},
+    crossSectionIsActive:{type: 'bool', default: false}
   },
  init: function(){
+  var comp = this;
+
    let contextButton = document.querySelector('[ContextButton]');
-   contextButton.addEventListener('context_activate', this.onContext);
-   let examBoxComp = document.querySelector('[ExamBox]');
-   examBoxComp.addEventListener('associated', this.whenCVisAssociated);
-   examBoxComp.addEventListener('disassociated', this.whenCVisDisassociated);
-   //this.makeModel();
- },
-  onContext: function(){
-    if(crossSectionIsActive){
-      if(!crossSectionIsVisible){
+   contextButton.addEventListener('context_activate', function(fevent){
+    if(comp.data.crossSectionIsActive){
+      console.log(fevent.state);
+      if(!comp.data.crossSectionIsVisible && !fevent.detail.state){
         crossSection.setAttribute('visible',true);
-        crossSectionIsVisible = true;
+        //if hideOriginal set visible of original to false
+        if(comp.data.hideOriginal === true){
+          activeModel.setAttribute('visible', false);
+        }
+        comp.data.crossSectionIsVisible = true;
         return;
       }
-      if(crossSectionIsVisible){
+      if(comp.data.crossSectionIsVisible && fevent.detail.state){
         crossSection.setAttribute('visible',false);
-        crossSectionIsVisible = false;
+        if(comp.data.hideOriginal === true){
+          activeModel.setAttribute('visible', true);
+        }
+        comp.data.crossSectionIsVisible = false;
         return;
       }
     }
-  },
+   });
+   let examBoxComp = document.querySelector('[ExamBox]');
+   let crossSection = null;
+   let activeModel = null;
+   examBoxComp.addEventListener('associated', function(event){
+    if(event.detail.associatedEntity.components.contextvisible){
+      activeModel = document.querySelector('#examModelChild');
+      crossSection = document.createElement('a-entity');
+      crossSection.setAttribute('id', 'crosssection')
+      crossSection.setAttribute('gltf-model',comp.data.gltfName);
+      crossSection.setAttribute('visible',false);
+      crossSection.setAttribute('scale', {x:0.1, y:0.1, z:0.1});
+      crossSection.setAttribute('animation-mixer', {clip: '*'});
+      crossSection.setAttribute('contextanimplay',{animName: '*'});
+      event.detail.cloneEntity.appendChild(crossSection);
+      event.detail.associatedEntity.components.contextvisible.data.crossSectionIsActive = true;
+      }
+   });
+   examBoxComp.addEventListener('disassociated', function(event){
+      comp.data.crossSectionIsActive = false;
+      activeModel = null;
+   });
+   //this.makeModel();
+ },
   whenCVisAssociated: function(event){
       if(event.detail.associatedEntity.components.contextvisible){
+      activeModel = document.querySelector('#examModelChild');
       event.detail.associatedEntity.components.contextvisible.makeModel();
       event.detail.cloneEntity.appendChild(crossSection);
       crossSectionIsActive = true;
@@ -41,17 +66,14 @@ AFRAME.registerComponent('contextvisible',{
     if(event.detail.disassociatedEntity.components.contextvisible){
       event.detail.disassociatedEntity.components.contextvisible.removeModel();
       crossSectionIsActive = false;
+      activeModel = null;
     }
   },
-  makeModel: function(){
+  makeModel: function(crossSection){
     //make the cross section object
-   crossSection = document.createElement('a-entity');
-   crossSection.setAttribute('id', 'crosssection')
-   crossSection.setAttribute('gltf-model',this.data.gltfName);
-   crossSection.setAttribute('visible',false);
-   crossSection.setAttribute('scale',this.el.getAttribute('scale'));
+   
   },
-  removeModel: function(){
-    crossSection.parentNode.removeChild(crossSection);
+  removeModel: function(crossSection){
+    
   }
 });
