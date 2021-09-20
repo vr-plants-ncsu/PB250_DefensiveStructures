@@ -36,6 +36,9 @@ AFRAME.registerComponent('examinecallout',{
     
     let expandButton = document.querySelector('#ExpandButton');
     expandButton.addEventListener('mousedown', function(){
+      if(comp.data.focusCooldown > 0){
+        return;
+      }
       comp.focusScreen(comp);
       comp.data.focusCooldown = 2;
     });
