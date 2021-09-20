@@ -39,8 +39,8 @@ AFRAME.registerComponent('examinecallout',{
       if(comp.data.focusCooldown > 0){
         return;
       }
-      comp.focusScreen(comp);
       comp.data.focusCooldown = 2;
+      comp.focusScreen(comp);
     });
     
     //find page buttons and setup events
