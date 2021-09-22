@@ -83,6 +83,7 @@
             <a-asset-item id="buttonExpand" src="./assets/buttons_expand.glb" preload="auto"></a-asset-item>
             <a-asset-item id="buttonGrid" src="./assets/buttons_grid.glb" preload="auto"></a-asset-item>
             <a-asset-item id="splashinsert" src="./assets/DSSplashModel_interior.gltf" preload="auto"></a-asset-item>
+            <a-assets-item id="brandinginsert" src="./assets/brandtangle.glb" preload="auto"></a-assets-item>
             <a-asset-item id="splash" src="./assets/DSSplashModel_exterior.gltf" preload="auto"></a-asset-item>
 
             <a-sound id="ferowholeVO" src="./assets/Jabeen_Defensive_01.wav" preload="auto"></a-sound>
@@ -207,6 +208,11 @@
 
         <!-- Camera rig serves as user perspective. User cannot pivot camera and raycast emits from this view-->
         <a-entity id="rig" position="0 1.55 0.115" rotation="0 -19.1 0">
+            <a-entity id="brandplane"
+                    gltf-model="#brandinginsert"
+                    position="-0.612 0.252 -0.997"
+                    rotation="90 0 0"
+                    scale="0.048 0.048 0.048"></a-entity>
             <a-entity id="eyes"
                       camera=""
                       look-controls="mouseEnabled: false"
@@ -229,11 +235,13 @@
 
 
 
-
+        
 
         <!--This is a random light that looks good on the splash   -->
         <a-entity id="splashscreencomplex" position="0.298 -2.766 0.116" scale="0.802 0.802 0.802">
             <a-entity id="splashlight" light="type: point; intensity: 0.3; castShadow: false; penumbra: 1" animation="property: position; to: 0 16 0;dir :alternate; loop: 999; dur: 30000"></a-entity>
+
+            
 
             <a-entity id="splashscreeninsert"
                       class="dissect"
