@@ -132,6 +132,10 @@
                           src="./assets/Ferrocactus_SpineAnimation.gltf" preload="auto"></a-asset-item>
             <a-asset-item id="FerrocactusWhole"
                           src="./assets/Ferrocactus_Whole.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="FerrocactusBottom"
+                          src="./assets/FerroCactusBottom.glb" preload="auto"></a-asset-item>
+            <a-asset-item id="FerrocactusTop"
+                          src="./assets/FerroCactusTop.glb" preload="auto"></a-asset-item>
 
             <a-asset-item id="HoneyLocustFull"
                           src="./assets/HoneyLocust_Full.gltf" preload="auto"></a-asset-item>
@@ -361,14 +365,35 @@
 
             <a-entity id="Ferrocactus">
 
-                <a-entity id="FerroWhole"
+                <a-entity id="FerroBottom"
                           mixin="FerroWholeSpec"
                           class="dissect"
-                          hoverable clickdrag gridable
+                          hoverable clickdrag="centerOffset: 0, -1, 0" gridable="firstPosition: 1, 0, 0"
                           shadow
+                          examinable="headerText: Ferocactus;
+                          contentText: Modeled here is a Barrel Cactus of genus Ferocactus. Cactus plants have areoles that produce clusters of spines along the stem.;
+                          audioClipUrl: #ferowholeVO;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Ferocactus;"
-                          gltf-model="#FerrocactusWhole"
+                          gltf-model="#FerrocactusBottom"
+                          contextvisible="gltfName: #FerrocactusSpineAnimation;
+                                 hideOriginal: true">
+
+
+                </a-entity>
+
+                <a-entity id="FerroTop"
+                          mixin="FerroWholeSpec"
+                          class="dissect"
+                          hoverable clickdrag="centerOffset: 0, -0.3, 0" gridable="firstPosition: 1, 0, 0"
+                          shadow
+                          examinable="headerText: Ferocactus (Cross Section);
+                          contentText: Most of the cactus stem consists of soft tissues for water storage. A ring of vascular tissues moves water and nutrients along the stem.;
+                          audioClipUrl: #ferocrossVO;
+                          centerOffset: 0, -0.3, 0;"
+                          scale="0.14 0.14 0.14"
+                          hovercallout="hoverText: Ferocactus (Cross Section);"
+                          gltf-model="#FerrocactusTop"
                           contextvisible="gltfName: #FerrocactusSpineAnimation;
                                  hideOriginal: true">
 
