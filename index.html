@@ -7,6 +7,13 @@
     <!--   This is a series of components and plugins used -->
     <!-- AFrame webXR Library  ver 1.2.0 -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+
+    <style>
+        .a-fullscreen{
+            margin-top: 0 !important;
+        }
+    </style>
+
     <!--Environment Component  -->
     <script src="./environment-component.js"></script>
     <!--Buttons and other event system uses event-set component and proxy events -->
@@ -50,7 +57,8 @@
              cursor="rayOrigin: mouse; fuse: false" raycaster="objects: .raycastable"
              event-set__click="_event:click;"
              background="color:  #cd990a"
-             info-message="htmlSrc: #messageText">
+             info-message="htmlSrc: #messageText"
+             loading-screen="dotsColor: white; backgroundColor: #427E93">
 
         <!-- Media assets used throughout experience    -->
         <a-assets>
@@ -212,7 +220,8 @@
                     gltf-model="#brandinginsert"
                     position="-0.612 0.252 -0.997"
                     rotation="90 0 0"
-                    scale="0.048 0.048 0.048"></a-entity>
+                    scale="0.048 0.048 0.048"
+                    ></a-entity>
             <a-entity id="eyes"
                       camera=""
                       look-controls="mouseEnabled: false"
