@@ -331,20 +331,6 @@
 
 
 
-        <a-entity id="tabselection"
-                  tabselector
-                  geometry="primitive: sphere;"
-                  scale="0.1, 0.1, 0.1">
-        </a-entity>
-
-
-
-
-
-
-
-
-
 
         <!-- defensivewholedissections is a container element for all the draggable anatomy models in the dissection simulation    -->
         <a-entity id="wholespecimencontrol1"
@@ -533,13 +519,13 @@
                 <a-entity id="LocustThorn2"
                           mixin="LocustThornSpec"
                           class="dissect"
-                          hoverable clickdrag="centerOffset: 0, -0.06, 0"
+                          hoverable clickdrag="centerOffset: 0, -0.13, 0"
                           gridable
                           shadow
                           examinable="headerText: Honey Locust Thorn;
                           contentText: Thorns are stems modified for defense. Honey Locust thorns form from lateral buds and are large and branching.;
                           audioClipUrl: #LocustThornVO;
-                          centerOffset: 0, -0.06, 0;"
+                          centerOffset: 0, -0.13, 0;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Thorn;"
                           gltf-model="#HoneyLocustThorn02"
@@ -549,13 +535,13 @@
                 <a-entity id="LocustThorn3"
                           mixin="LocustThornSpec"
                           class="dissect"
-                          hoverable clickdrag="centerOffset: 0, -0.18, 0"
+                          hoverable clickdrag="centerOffset: 0, -0.48, 0"
                           gridable
                           shadow
                           examinable="headerText: Honey Locust Thorn;
                           contentText: Thorns are stems modified for defense. Honey Locust thorns form from lateral buds and are large and branching.;
                           audioClipUrl: #LocustThornVO;
-                          centerOffset: 0, -0.18, 0;"
+                          centerOffset: 0, -0.48, 0;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Thorn;"
                           gltf-model="#HoneyLocustThorn03"
@@ -565,13 +551,13 @@
                 <a-entity id="LocustThorn4"
                           mixin="LocustThornSpec"
                           class="dissect"
-                          hoverable clickdrag="centerOffset: 0, -0.30, 0"
+                          hoverable clickdrag="centerOffset: 0, -0.67, 0"
                           gridable
                           shadow
                           examinable="headerText: Honey Locust Thorn;
                           contentText: Thorns are stems modified for defense. Honey Locust thorns form from lateral buds and are large and branching.;
                           audioClipUrl: #LocustThornVO;
-                          centerOffset: 0, -0.30, 0;"
+                          centerOffset: 0, -0.67, 0;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Thorn;"
                           gltf-model="#HoneyLocustThorn04"
@@ -581,13 +567,13 @@
                 <a-entity id="LocustThorn5"
                           mixin="LocustThornSpec"
                           class="dissect"
-                          hoverable clickdrag="centerOffset: 0, -0.42, 0"
+                          hoverable clickdrag="centerOffset: 0, -0.88, 0"
                           gridable
                           shadow
                           examinable="headerText: Honey Locust Thorn;
                           contentText: Thorns are stems modified for defense. Honey Locust thorns form from lateral buds and are large and branching.;
                           audioClipUrl: #LocustThornVO;
-                          centerOffset: 0, -0.42, 0;"
+                          centerOffset: 0, -0.88, 0;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Thorn;"
                           gltf-model="#HoneyLocustThorn05"
@@ -597,13 +583,13 @@
                 <a-entity id="LocustThorn6"
                           mixin="LocustThornSpec"
                           class="dissect"
-                          hoverable clickdrag="centerOffset: 0, -0.56, 0"
+                          hoverable clickdrag="centerOffset: 0, -1.2, 0"
                            gridable
                           shadow
                           examinable="headerText: Honey Locust Thorn;
                           contentText: Thorns are stems modified for defense. Honey Locust thorns form from lateral buds and are large and branching.;
                           audioClipUrl: #LocustThornVO;
-                          centerOffset: 0, -0.56, 0;"
+                          centerOffset: 0, -1.2, 0;"
                           scale="0.14 0.14 0.14"
                           hovercallout="hoverText: Thorn;"
                           gltf-model="#HoneyLocustThorn06"
@@ -856,7 +842,12 @@
     <a-entity id="linkbutton" class="dissect" position="-5.95081 0.34945 21.11389" material="color: #D55E00; opacity: 0.65" geometry="" sound="src: clickno; on: click" href="https://plants.ces.ncsu.edu/plants/zephyranthes-atamasco/" target="_blank"></a-entity>
     </a-entity> -->
 
-
+    <a-entity id="tabselection"
+    tabselector
+    geometry="primitive: sphere;"
+    scale="1.2, 1.2, 1.2"
+    material="blending: additive; color: #154f5e; transparent: true;"
+    >
 
 </a-scene>
 </body>
