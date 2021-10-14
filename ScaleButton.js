@@ -48,10 +48,10 @@ AFRAME.registerComponent('scalebutton',{
        var shortcutPressed = evt.keyCode === 87;
      }
      if(scaleDel > 0){
-      var shortcutPressed = evt.keyCode === 69;
+      var shortcutPressed = evt.keyCode === 82;
      }
      if(scaleDel < 0){
-       var shortcutPressed = evt.keyCode === 82;
+       var shortcutPressed = evt.keyCode === 69;
      }
       if (!shortcutPressed){
         return;
