@@ -725,10 +725,10 @@
                           examinecallout>
                     <a-entity id="examinetextheader" text="value: Welcome; transparent : true" position="0.138 0.166 0.006" scale="1.2 1.2 1.2"></a-entity>
                     <a-entity id="examinetextbody" text="value: C; transparent : true" position="0.008 -0.008 0.004"></a-entity>
-                    <a-entity id="examineAudioButton" class="dissect" gltf-model="#speakerIcon" examineaudio position="0.26 -0.153 0.073" scale="0.025 0.025 0.025"></a-entity>
+                    <a-entity id="examineAudioButton" class="dissect" gltf-model="#speakerIcon" examineaudio position="0.26 -0.153 0.073" scale="0.025 0.025 0.025" hovercallout="hoverText: Hear Narration;"></a-entity>
                     <a-entity id="LeftCalloutButton" class="dissect" gltf-model="#buttonLeft" position="-0.380 -0.153 0.073" scale="0.025 0.025 0.025"></a-entity>
                     <a-entity id="RightCalloutButton" class="dissect" gltf-model="#buttonRight" position="0.403 -0.153 0.073" scale="0.025 0.025 0.025"></a-entity>
-                    <a-entity id="ExpandButton" class="dissect" gltf-model="#buttonExpand" position="0.415 0.181 0.075" scale="0.025 0.025 0.025"></a-entity>
+                    <a-entity id="ExpandButton" class="dissect" gltf-model="#buttonExpand" position="0.415 0.181 0.075" scale="0.025 0.025 0.025" hovercallout="hoverText: Expand Panel;"></a-entity>
                     <a-entity id="attachPoint"></a-entity>
                 </a-entity>
             </a-entity>
@@ -741,8 +741,8 @@
             <!--   UI system buttons to emit proxy events -->
 
             <a-entity id="ExaminationScaleUI" layout="margin: 1.35; angle: NaN; columns: 3" scale="0.075 0.075 0.05" position="0.624 1.204 -1.120" rotation="0 -55 0">
-                <a-box id="scale1button" scale="0.3 0.3 0.3" class="dissect" position="" scalebutton="scaleDelta: -0.05; scaleMin: 0.1" gltf-model="#buttonOut"
-                       sound="src: #click1; on: click"
+                <a-box id="scale1button" scale="0.3 0.3 0.3" class="dissect" position="" scalebutton="scaleDelta: -0.1; scaleMin: 0.1" gltf-model="#buttonOut"
+                       sound="src: #click1; on: click" hovercallout="hoverText: Zoom Out;"
                        event-set__lightscale1light="
                 _event : click;
                 _target : #scale1light;
@@ -763,7 +763,7 @@
                 </a-box>
 
                 <a-box id="scale2button" scale="0.3 0.3 0.3" class="dissect" position="2 0 0" material="color: #56b4e9; opacity: 0.65" scalebutton="scaleDelta: 0; scaleMax: 0.6" gltf-model="#buttonReset"
-                       sound="src: #click2; on: click"
+                       sound="src: #click2; on: click" hovercallout="hoverText: Reset Zoom;"
                        event-set__scaled2="
                 _event : click;
                 _target : #attachPoint;
@@ -788,8 +788,8 @@
                     <a-entity id="scale2light" light="type:  point;  color:  #56b4e9;  decay:  1.5;  distance:  0.075;  intensity:  20"></a-entity>
                 </a-box>
 
-                <a-box id="scale3button" scale="0.3 0.3 0.3" class="dissect" position="4 0 0" material="color: #0072b2; opacity: 0.65" scalebutton="scaleDelta: 0.05; scaleMax: 0.6" gltf-model="#buttonIn"
-                       sound="src: #click3; on: click"
+                <a-box id="scale3button" scale="0.3 0.3 0.3" class="dissect" position="4 0 0" material="color: #0072b2; opacity: 0.65" scalebutton="scaleDelta: 0.1; scaleMax: 0.6" gltf-model="#buttonIn"
+                       sound="src: #click3; on: click" hovercallout="hoverText: Zoom Out;"
                        event-set__scaled3="
                 _event : click;
                 _target : #attachPoint;
@@ -820,7 +820,7 @@
                 <a-cylinder id="ContextButton" class="dissect" position="" scale="-0.5 0.5 -0.5" material="color: #55D142; opacity: 0.65"
                             contextbutton="onGltfUrl: https://cdn.glitch.com/9e3ddbc0-bfb3-4240-8716-a793e4bd6483%2Fbuttons_spec_on.glb?v=1624903611959;
                                  offGltfUrl: https://cdn.glitch.com/9e3ddbc0-bfb3-4240-8716-a793e4bd6483%2Fbuttons_spec_off.glb?v=1625180387523" gltf-model="#buttonSpecOff"
-                            sound="src: #clickyes; on: click; poolSize: 20;"
+                            sound="src: #clickyes; on: click; poolSize: 20;" hovercallout="hoverText: View Animation;"
                             event-set__lighttoggle1light="
                     _event : click;
                     _target : #toggle1light;
@@ -836,7 +836,7 @@
             </a-entity>
 
             <a-box id="gridbutton" scale="0.023 0.023 0.023" class="dissect" position="0.088 1.228 -1.433" material="color: #56b4e9; opacity: 0.65" scalebutton="scaleDelta: 0; scaleMax: 0.6" gltf-model="#buttonGrid"
-                   sound="src: #click2; on: click"></a-box>
+                   sound="src: #click2; on: click" hovercallout="hoverText: Explode or Reset Specimen;"></a-box>
 
             <!-- <a-entity id="linkbuttonui" scale="0.025 0.025 0.025" position="0.62 1.17 -1.28" rotation="0 49.5 0">
     <a-entity id="linkbutton" class="dissect" position="-5.95081 0.34945 21.11389" material="color: #D55E00; opacity: 0.65" geometry="" sound="src: clickno; on: click" href="https://plants.ces.ncsu.edu/plants/zephyranthes-atamasco/" target="_blank"></a-entity>

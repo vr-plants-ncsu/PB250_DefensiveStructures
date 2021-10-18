@@ -1,3 +1,5 @@
+var crossSection = null;
+var activeModel = null;
 AFRAME.registerComponent('contextvisible',{
   schema: {
     gltfName:{type: 'string', default: ""},
@@ -32,8 +34,8 @@ AFRAME.registerComponent('contextvisible',{
     }
    });
    let examBoxComp = document.querySelector('[ExamBox]');
-   let crossSection = null;
-   let activeModel = null;
+   crossSection = null;
+   activeModel = null;
    examBoxComp.addEventListener('associated', function(event){
     if(event.detail.associatedEntity.components.contextvisible){
       activeModel = document.querySelector('#examModelChild');
